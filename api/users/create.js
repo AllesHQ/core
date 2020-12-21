@@ -23,10 +23,8 @@ module.exports = async (req, res) => {
 
   // Create User
   const user = await db.User.create({
-    ...req.body,
     id: uuid(),
-    username,
-    name,
+    ...req.body,
     password: passwordHash,
   });
 
