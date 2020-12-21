@@ -15,6 +15,7 @@ db.sync().then(() =>
 // Users
 app.post("/users", require("./api/users/create"));
 app.get("/users/:id", require("./api/users"));
+app.post("/users/:id", require("./api/users/update"));
 
 // Not Found
 app.use((_req, res) => res.status(404).send("Not Found"));
