@@ -3,7 +3,7 @@ const uuid = require("uuid").v4;
 const argon2 = require("argon2");
 
 module.exports = async (req, res) => {
-  const { name, username, password, email, phone } = req.body;
+  const { name, username, password } = req.body;
   if (typeof username !== "string" || typeof name !== "string")
     return res.status(400).send("Bad Request");
 
@@ -23,12 +23,11 @@ module.exports = async (req, res) => {
 
   // Create User
   const user = await db.User.create({
+    ...req.body,
     id: uuid(),
-    name,
     username,
+    name,
     password: passwordHash,
-    email: typeof email === "string" ? email : null,
-    phone: typeof phone === "string" ? phone : null,
   });
 
   // Response
