@@ -12,8 +12,9 @@ db.sync().then(() =>
   app.listen(8080, () => console.log("Server is listening..."))
 );
 
-// Create User
+// Users
 app.post("/users", require("./api/users/create"));
+app.get("/users/:id", require("./api/users"));
 
 // Not Found
 app.use((_req, res) => res.status(404).send("Not Found"));
