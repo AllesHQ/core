@@ -16,6 +16,7 @@ db.sync().then(() =>
 app.post("/users", require("./api/users/create"));
 app.get("/users/:id", require("./api/users"));
 app.post("/users/:id", require("./api/users/update"));
+app.get("/:key/:value", require("./api/users/query"));
 
 // Not Found
 app.use((_req, res) => res.status(404).send("Not Found"));
