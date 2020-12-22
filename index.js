@@ -18,6 +18,8 @@ app.get("/users/:id", require("./api/users"));
 app.post("/users/:id", require("./api/users/update"));
 app.post("/users/:id/password", require("./api/users/password/update"));
 app.post("/users/:id/password/verify", require("./api/users/password/verify"));
+app.post("/users/:id/xp", require("./api/users/xp"));
+app.post("/users/:id/coins", require("./api/users/coins"));
 app.get("/:key/:value", require("./api/users/query"));
 
 // Not Found
