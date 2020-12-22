@@ -29,9 +29,5 @@ module.exports = async (req, res) => {
   });
 
   // Response
-  res.json({
-    id: user.id,
-    username: user.username,
-    name: user.name,
-  });
+  res.json({ id: user.id });
 };
