@@ -37,6 +37,11 @@ module.exports = (db) => {
         defaultValue: 0,
         allowNull: false,
       },
+      coins: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
+      },
       country: {
         type: DataTypes.STRING,
       },
